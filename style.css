@@ -1,0 +1,39 @@
+/* ── ANIMATIONS SCROLL ── */
+.fade-up {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity .7s ease, transform .7s ease;
+}
+.fade-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── GRILLE ANIMÉE DU HERO ── */
+.hero-grid {
+  background-image:
+    linear-gradient(rgba(110, 231, 183, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(110, 231, 183, 0.05) 1px, transparent 1px);
+  background-size: 60px 60px;
+  animation: gridShift 20s linear infinite;
+}
+
+@keyframes gridShift {
+  from { transform: translateY(0); }
+  to   { transform: translateY(60px); }
+}
+
+/* ── TITRE EN CONTOUR (HERO) ── */
+.text-stroke {
+  color: transparent;
+  -webkit-text-stroke: 1.5px #6ee7b7;
+}
+
+/* ── BARRE DE COULEUR EN HAUT DES STAT CARDS ── */
+.stat-bar::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #6ee7b7, #38bdf8);
+}
